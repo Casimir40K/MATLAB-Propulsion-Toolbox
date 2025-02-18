@@ -1,4 +1,4 @@
-function stagnationTemperature = IsentropicTemperature(staticTemperature,mach)
+function stagnationTemperature = IsentropicTemp(staticTemperature,mach)
 % Fids the 
 
 % /////////////////////////////////////////////////////////////////////////
