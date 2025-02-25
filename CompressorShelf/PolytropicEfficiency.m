@@ -1,8 +1,7 @@
-function [outputArg1,outputArg2] = PolytropicEfficiency(inputArg1,inputArg2)
-%POLYTROPICEFFICIENCY Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
- % this is meant to be a test to ensure that everything works
+function polytropicEfficiency = PolytropicEfficiency(piC,tauC,fluidName)
+properties = FluidProperties(fluidName);
+gamma = properties.gamma;
+piCConv = piC^((gamma - 1) / (gamma));
+polytropicEfficiency = (log(piCConv)) / (log(tauC));
 end
 
