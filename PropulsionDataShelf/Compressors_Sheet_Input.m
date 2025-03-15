@@ -22,3 +22,10 @@ tauC = Tt3 / Tt2
 compressorPressureRatio = CompressorPressureRatio(etaC,tauC,fluidName) 
 smallStagePressureRatio = SmallStagePressureRatio(compressorPressureRatio,numStages)
 polytropicEfficiency = PolytropicEfficiency(compressorPressureRatio,tauC,fluidName)
+
+
+% Q5
+speed = 310; staticTemperature = 273.15+20; numStages = 10; ... 
+    massFlowRate = 349; compressorPower = 200;
+
+etaC = 
