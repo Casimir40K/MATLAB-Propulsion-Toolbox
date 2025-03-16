@@ -3,7 +3,7 @@ function Tt3 = CompressorPower2Temperature(compressorPower,massFlowRate,Tt2,flui
 properties = FluidProperties(fluidName);
 cP = properties.cP;
 
-Tt3 = (compressorPower / (massFlowRate * cP)) + Tt2 ;
+Tt3 = (compressorPower*1000 / (massFlowRate * cP)) + Tt2 ;
 
 end
 
