@@ -1,17 +1,36 @@
-# MATLAB-Propulsion-Toolbox
-A toolbox of functions to help with propulsion questions
+# MATLAB Propulsion Toolbox
 
-There are 5 mian folder, each corresponding with one section of an engine.
-  1.  The Inlet
-  2.  The Compressor
-  3.  The Combustor
-  4.  The Turbine
-  5.  Dedpendancies and universal functions
+A function library for gas turbine propulsion calculations in MATLAB, 
+organised by engine station. Built during BEng Aerospace Engineering 
+at Brunel University.
 
-All of the functions are provided as is, and with NO GUARANTEE OF SUPPORT
+## Structure
+InletShelf/        -- isentropic relations, adiabatic efficiency,
+pressure recovery, h-s chart
+CompressorShelf/   -- pressure ratio, temperature ratio, polytropic
+and adiabatic efficiency, stage analysis
+CombustorShelf/    -- total pressure, peak cycle temperature,
+thermal limit
+TurbineShelf/      -- pressure ratio, efficiency (partial)
+NozzleShelf/       -- choke detection, critical pressure (partial)
+DependenciesShelf/ -- fluid properties (air, burnt gas)
+PropulsionDataShelf/ -- worked example scripts
 
-If you find a bug or error, you are welcome to make your own branch as I will probably not have the time to properly maintain this.
+## Status
 
+Inlet and compressor functions are complete and tested against 
+coursework problems. Turbine and nozzle shelves are partially 
+implemented.
 
+## Usage
 
+Add the relevant shelf folders to your MATLAB path, then call 
+functions directly. See `PropulsionDataShelf/` for worked examples.
 
+```matlab
+mach = MachNumber(300, 272.15, 'm/s');
+Tt2 = IsentropicTemperature(272.15, mach);
+Tt3 = CompressorTotalTemperature(Tt2, 16, 'air', 0.88);
+```
+
+No toolboxes required beyond base MATLAB.
